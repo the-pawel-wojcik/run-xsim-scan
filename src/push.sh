@@ -30,7 +30,7 @@ fi
 
 cd scan
 
-if [[ "$molecule" -eq "caoph" ]]
+if [[ "$molecule" == "caoph" ]]
 then
     rsync -avP *.input ${cluster}:~/cci/phenoxide/calcium/xsim
 else

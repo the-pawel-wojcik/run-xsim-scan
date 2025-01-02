@@ -30,4 +30,9 @@ then
     export number=$(printf "%02d" $1)
 fi
 
-sed "s#$keyword#$new_val#" < ${template}.template > ${template}_${number}${extension}.input
+if [[ ! -d scan ]]
+then
+    mkdir scan
+fi
+
+sed "s#$keyword#$new_val#" < ${template}.template > scan/${template}_${number}${extension}.input

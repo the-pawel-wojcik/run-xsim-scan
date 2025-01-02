@@ -27,7 +27,7 @@ then
     mkdir scan
 fi
 
-if [[ "$molecule" -eq "caoph" ]]
+if [[ "$molecule" == "caoph" ]]
 then
     rsync -avP ${cluster}:~/cci/phenoxide/calcium/xsim/${template}_* ./scan
 else
