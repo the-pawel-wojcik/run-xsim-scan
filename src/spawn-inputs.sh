@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # source variable named "template" and "extension"
 source get-tmplt-name.sh
