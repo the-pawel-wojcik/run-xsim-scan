@@ -1,6 +1,6 @@
 # xsim scripts 
 Prepare, submit, pull, and plot a series of calculations that scans a
-paramerter in the KDC model. Support for xsim (part of CFOUR) and xsimplot.py.
+parameter in the KDC model. Support for xsim (part of CFOUR) and xsimplot.py.
 
 For plotting, place an `xsimplot.toml` config file in the scan subdirectory.
 
@@ -11,14 +11,25 @@ For plotting, place an `xsimplot.toml` config file in the scan subdirectory.
 ```bash
 git clone git@github.com:the-pawel-wojcik/run-xsim-scan
 ```
-3. Hardlink scripts in the cwd
+3. Inside the working directory, form links to the scripts located in the 
+`run-xsim-scan/src` directory.
 ```bash
-for file in run-xsim-scan/src/* ; do ln $file; done
+find . -name '*.sh' -exec ln '{}' ';'
 ```
 4. Edit the `.template` file by replacing the value you would like to scan with 
-`TEMPLATE_<NAME>`. Where the list of avalilbe `<NAME>` value can be checked in
-`get_template_name.sh` script.
-5. Adjust the range of scanned parameter by editing the `run-spawn.sh` scritp.
+`TEMPLATE_<NAME>`. Where the list of available `<NAME>` value can be checked in
+`get_template_name.sh` script. Example: to scan the basis set size change a 
+sample lines
+```
+Basis Functions
+15 15 15 15 15
+```
+to 
+```
+Basis Functions
+TEMPLATE_BASIS
+```
+5. Adjust the range of scanned parameter by editing the `run-spawn.sh` script.
 6. Issue 
 ```bash
 ./run-spawn.sh
@@ -33,7 +44,9 @@ for file in run-xsim-scan/src/* ; do ln $file; done
 ```bash
 ./plot.sh
 ```
-Create an `xsimplot.toml` file in the `scan` directory to customize the plot.
+Use the `xsimplot.py --help` to view the command line customization options or
+create an `xsimplot.toml` file in the `scan` directory to keep the command line
+short.
 
 ## User and domain trick in push/pull scripts
 Here is how to avoid typing 
