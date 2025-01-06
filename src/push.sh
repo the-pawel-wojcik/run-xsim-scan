@@ -33,6 +33,14 @@ cd scan
 if [[ "$molecule" == "caoph" ]]
 then
     rsync -avP *.input ${cluster}:~/cci/phenoxide/calcium/xsim
+    if [[ "$?" -eq "0" ]]
+    then
+        rm *.input
+    fi
 else
     rsync -avP *.input ${cluster}:~/${molecule}/xsim
+    if [[ "$?" -eq "0" ]]
+    then
+        rm *.input
+    fi
 fi
