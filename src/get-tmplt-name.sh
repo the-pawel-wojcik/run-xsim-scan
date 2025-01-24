@@ -89,6 +89,18 @@ then
     molecule="pyrazine"
 fi
 
+pwd | grep 'sroph' &> /dev/null
+if [[ $? == 0 ]]
+then
+    molecule="sroph"
+fi
+
+pwd | grep 'caoph' &> /dev/null
+if [[ $? == 0 ]]
+then
+    molecule="caoph"
+fi
+
 if [[ -z "$molecule" ]]
 then
     echo Error. Path does not tell what molecule this is. >&2

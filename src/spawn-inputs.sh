@@ -13,7 +13,11 @@ then
     exit 1
 fi
 
-if [[ "$template_freq" -eq "0" || "$template_lanczos" -eq "0" ]] 
+if [[ \
+    "$template_freq" -eq "0" ||\
+    "$template_lanczos" -eq "0" ||\
+    "$template_energy" -eq "0" \
+    ]] 
 then
     export new_val=$1
     export number=$(printf "%04d" $1)

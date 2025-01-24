@@ -37,6 +37,13 @@ then
     then
         rm *.input
     fi
+elif [[ "$molecule" == "sroph" ]]
+then
+    rsync -avP *.input ${cluster}:~/cci/phenoxide/strontium/xsim
+    if [[ "$?" -eq "0" ]]
+    then
+        rm *.input
+    fi
 else
     rsync -avP *.input ${cluster}:~/${molecule}/xsim
     if [[ "$?" -eq "0" ]]
