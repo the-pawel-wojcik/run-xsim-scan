@@ -30,6 +30,9 @@ fi
 if [[ "$molecule" == "caoph" ]]
 then
     rsync -avP ${cluster}:~/cci/phenoxide/calcium/xsim/${template}_* ./scan
+elif [[ "$molecule" == "sroph" ]]
+then
+    rsync -avP ${cluster}:~/cci/phenoxide/strontium/xsim/${template}_* ./scan
 else
     rsync -avP ${cluster}:~/${molecule}/xsim/${template}_* ./scan
 fi
