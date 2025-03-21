@@ -33,6 +33,7 @@ TEMPLATE_BASIS
 6. Issue 
 ```bash
 ./run-spawn.sh
+# ./color.sh # OPTIONAL, adjust the color script before you do that
 ./push.sh  # read this file and the trick below to get it to work
 ```
 7. The input files are now on your cluster – submit them.
