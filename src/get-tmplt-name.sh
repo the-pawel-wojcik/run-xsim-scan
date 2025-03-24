@@ -95,6 +95,12 @@ then
     molecule="sroph"
 fi
 
+pwd | grep 'SrOPh' &> /dev/null
+if [[ $? == 0 ]]
+then
+    molecule="sroph"
+fi
+
 pwd | grep 'caoph' &> /dev/null
 if [[ $? == 0 ]]
 then
